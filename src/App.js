@@ -7,7 +7,7 @@ import FirstPage from "./Components/FirstPage";
 import SecondPage from "./Components/SecondPage";
 import ThirdPage from "./Components/ThirdPage";
 import FirstPageHead from "./Components/FirstPageHead";
-import SecondPageHead from "./Components/SeaddcondPageHead";
+import SecondPageHead from "./Components/SecondPageHead";
 import ThirdPageHead from "./Components/ThirdPageHead";
 import SubmitForm from "./Components/SubmitForm";
 
