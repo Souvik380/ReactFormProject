@@ -1,5 +1,4 @@
 import React from "react"
-import logo from './logo.svg';
 import './App.css';
 import Spiderman from "./Images/spiderman.jpg"
 import Superman from "./Images/Superman.jpg"
@@ -8,7 +7,7 @@ import FirstPage from "./Components/FirstPage";
 import SecondPage from "./Components/SecondPage";
 import ThirdPage from "./Components/ThirdPage";
 import FirstPageHead from "./Components/FirstPageHead";
-import SecondPageHead from "./Components/SecondPageHead";
+import SecondPageHead from "./Components/SeaddcondPageHead";
 import ThirdPageHead from "./Components/ThirdPageHead";
 import SubmitForm from "./Components/SubmitForm";
 
