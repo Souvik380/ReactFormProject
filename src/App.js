@@ -51,28 +51,30 @@ class App extends React.Component{
     const page=this.state.page
     
     return(
-        <div className="App">
+        <div className="App flex ">
 
           {page<=3?(<div className="flex h-full justify-around items-end">
             <img src={image} className="bg-center h-full rounded-[10px]"/>
 
-            <div className="flex flex-col h-full justify-around">
+            <div className="ml-0 bg-gray-200 rounded-[10px] flex flex-col h-full justify-around">
 
-              <div className="ml-0">
+              <div className="ml-4">
               {
                   page===1?<FirstPageHead />:(page===2?<SecondPageHead />:<ThirdPageHead />)
               }
               
               </div>
 
-              <div className="object-contain  h-full">
+              <div className="ml-4 object-contain h-[fit-content]">
                 {
                   page===1?<FirstPage onChange={(flag)=>this.changeState(flag)} />:(page===2?<SecondPage onChange={(flag)=>this.changeState(flag)} />:<ThirdPage onChange={(flag)=>this.changeState(flag)} />)
                 }
+
+                {/* <ThirdPage /> */}
                 
               </div>
 
-              <div className="flex justify-end ">
+              <div className="absolute mt-[360px] ml-[170px]">
                 {
                   page!==1?(<button onClick={()=>this.prevPage()} className="decoration-black font-bold text-xl mr-4">Back</button>):(<p></p>)
                 }

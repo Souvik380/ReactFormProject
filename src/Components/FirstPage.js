@@ -6,8 +6,8 @@ export default class FirstPage extends Component {
     constructor(){
         super()
         this.state={
-            firstName:"",
-            lastName:"",
+            first:"",
+            last:"",
             dob:"",
             email:"",
             address:""
@@ -22,15 +22,43 @@ export default class FirstPage extends Component {
     }
 
     checkStates=()=>{
-        let first=this.state.firstName
+        let first=this.state.first
         let last=this.state.last
         let dob=this.state.dob
         let address=this.state.address
         let email=this.state.email
 
-        if(last!=="" && address!=="" && email!==""){
+        
+        if(dob!=="" && first!=="" && last!=="" && address!=="" && email!==""){
             return true
         }
+        console.log("!!!",first)
+        if(first===""){
+        
+            document.getElementById("first-name").style.border="2px solid red"
+            document.getElementById("first-name").placeholder="First Name"
+        }
+
+        if(last===""){
+            document.getElementById("last-name").style.border="2px solid red"
+            document.getElementById("last-name").placeholder="Last Name"
+        }
+
+        if(dob===""){
+            document.getElementById("dob").style.border="2px solid red"
+            document.getElementById("dob").placeholder="DOB"
+        }
+
+        if(address===""){
+            document.getElementById("address").style.border="2px solid red"
+            document.getElementById("address").placeholder="Address"
+        }
+
+        if(email===""){
+            document.getElementById("email").style.border="2px solid red"
+            document.getElementById("email").placeholder="Email"
+        }
+
         return false
     }
 
@@ -49,33 +77,36 @@ export default class FirstPage extends Component {
         <div className='flex justify-between'>
             <div>
                 <p className='text-black-400 font-bold'>First Name</p>
-                <input name="first" type="text" className='border-solid border-4 from-cyan-500 to-blue-500' onKeyUp={(e)=>this.changeHandler(e)} required/>
+                <input id="first-name" name="first" type="text" className='border-solid border-4 from-cyan-500 to-blue-500' onChange={(e)=>this.changeHandler(e)} required/>
             </div>
 
             <div>
                 <p className='text-black-400 font-bold'>Last Name</p>
-                <input name="last" type="text" className='border-solid border-4 from-cyan-500 to-blue-500' onKeyUp={(e)=>this.changeHandler(e)} required/>
+                <input id="last-name" name="last" type="text" className='border-solid border-4 from-cyan-500 to-blue-500' onChange={(e)=>this.changeHandler(e)} required/>
             </div>
         </div>
 
         <div className='flex justify-between'>
             <div>
                 <p className='text-black-400 font-bold'>Date of Birth</p>
-                <input name="dob" type="date" className='border-solid border-4 from-cyan-500 to-blue-500' onKeyUp={(e)=>this.changeHandler(e)} required/>
+                <input id="dob" name="dob" type="date" className='dob border-solid border-4 from-cyan-500 to-blue-500' onChange={(e)=>this.changeHandler(e)} required/>
             </div>
 
             <div>
                 <p className='text-black-400 font-bold ml-6'>Email</p>
-                <input name="email" type="email" className='ml-6 border-solid border-4 from-cyan-500 to-blue-500' onKeyUp={(e)=>this.changeHandler(e)} required/>
+                <input id="email" name="email" type="email" className='ml-6 border-solid border-4 from-cyan-500 to-blue-500' onChange={(e)=>this.changeHandler(e)} required/>
             </div>
         </div>
 
         <div >
             <p className='text-black-400 font-bold'>Address</p>
-            <input name="address" type="text" className='w-full border-solid border-4 from-cyan-500 to-blue-500' onKeyUp={(e)=>this.changeHandler(e)} required/>
+            <input id="address" name="address" type="text" className='w-full border-solid border-4 from-cyan-500 to-blue-500' onChange={(e)=>this.changeHandler(e)} required/>
         </div>
         
-        <button onClick={()=>{this.checkStates()===true?this.props.onChange(true):this.props.onChange(false)}} className="h-14 bg-gradient-to-r from-cyan-500 to-blue-500 h-[42px] mt-8 mb-8 mr-12 py-4 px-4 flex items-center font-bold text-0.5xl rounded-[10px] text-white">Next Step</button>
+        <div className='w-full flex justify-end'>
+            <button onClick={()=>{this.checkStates()===true?this.props.onChange(true):this.props.onChange(false)}} className="h-14 bg-gradient-to-r from-cyan-500 to-blue-500 h-[42px]  mb-8 mr-12 py-4 px-4 flex items-center font-bold text-0.5xl rounded-[10px] text-white">Next</button>
+        </div>
+        
       </div>
     )
   }
